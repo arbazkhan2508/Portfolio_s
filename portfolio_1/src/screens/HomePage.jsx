@@ -2,6 +2,7 @@ import React from 'react'
 import { BehanceIcon, ButtonArrow, EmailIcon, LinkIcon } from '../routes/Icon'
 // import Button from '@mui/material/Button';
 import { Tabs, Tab } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -14,6 +15,7 @@ const FooterImg = require('../assets/FooterImg.png')
 const thanksDekstop = require('../assets/thankde.png')
 
 const HomePage = () => {
+  const navigate = useNavigate();
 
   // TABS 
 
@@ -143,7 +145,9 @@ const HomePage = () => {
               </div>
               <div className='w-full flex flex-col items-start justify-center lg:items-center  gap-6 py-6 lg:py-16 '>
                 {contentArray.map((item) => (
-                  <div key={item} className='w-full lg:w-[70%] flex flex-col lg:flex-row  gap-0 lg:gap-6 py-4'>
+                  <div key={item} onClick={() => {
+                    navigate('/trading')
+                  }} className='w-full lg:w-[70%] flex flex-col lg:flex-row  gap-0 lg:gap-6 py-4'>
                     <div className='w-full block lg:hidden py-6 '>
                       <h4 className='text-[#FFFFFF] text-xl'>DOUBT PANEL</h4>
                     </div>
